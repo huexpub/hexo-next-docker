@@ -23,6 +23,7 @@ RUN cd /blog \
 RUN sed -i "s/imyouradmin/passwd/g" /blog/node_modules/hexo-editor/_config.yml  
 COPY run.sh /blog/run.sh
 WORKDIR /blog
+USER root
 EXPOSE 4000 2048
 
-CMD ["run.sh"] 
+CMD ["/blog/run.sh"] 
