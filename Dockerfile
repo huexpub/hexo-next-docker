@@ -3,19 +3,11 @@ MAINTAINER Huex <huexpub@gmail.com>
 RUN  echo "http://mirrors.aliyun.com/alpine/edge/main/" > /etc/apk/repositories \
     && echo "http://mirrors.aliyun.com/alpine/edge/community/" >> /etc/apk/repositories \
     && apk add --update \
-        avahi-dev \
-        musl-dev \
-        libc-dev \
-        build-base \
-        g++ \
-        bash \
         npm \
         git \
-        ca-certificates \
-        supervisor \
+        bash \
         nodejs \
         nodejs-dev \
-        zeromq-dev \
         tzdata \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
