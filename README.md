@@ -12,6 +12,7 @@ RUN sed -i "s/imyouradmin/passwd/g" /blog/node_modules/hexo-editor/_config.yml
 
 确保你映射的目录有hexo.yml和next.yml，文件已经提供，一个是端点配置文件，一个是主题配置文件
 
+```
 docker run --network=host -d  \
     --restart=always \
     -v /opt/hexo/source:/blog/source \
@@ -19,7 +20,8 @@ docker run --network=host -d  \
     -v /opt/hexo/next.yml:/blog/themes/next/_config.yml \
     --name hexo \
     hexo:latest
-    
+
+```
 ## WEB
 使用 http://ip:2048访问hexo-editor  http://ip:4000访问在线页面
 
