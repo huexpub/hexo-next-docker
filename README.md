@@ -9,6 +9,9 @@ RUN sed -i "s/imyouradmin/passwd/g" /blog/node_modules/hexo-editor/_config.yml
 中passwd为hexo-editor访问的密码，默认用户名为admin
 
 ## RUN
+
+确保你映射的目录有hexo.yml和next.yml，文件已经提供，一个是端点配置文件，一个是主题配置文件
+
 docker run --network=host -d  \
     --restart=always \
     -v /opt/hexo/source:/blog/source \
@@ -26,3 +29,8 @@ docker run --network=host -d  \
 -v /opt/hexo/public:/blog/public \
 
 ```
+
+## HELP
+
+http://theme-next.iissnan.com/getting-started.html
+
