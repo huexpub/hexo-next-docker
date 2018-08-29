@@ -1,6 +1,7 @@
 # hexo-next-docker
 
 ## Dockerfile
+下载文件到目录后，确保run.sh有执行权限，chmod a+x run.sh   chmod 777 run.sh 
 run.sh与dockfile同一目录后使用 docker build -t hexo:latest . 创建images
 创建images前，请修改dockerfile里以下内容
 ```
