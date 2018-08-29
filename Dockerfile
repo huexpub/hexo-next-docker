@@ -16,6 +16,7 @@ RUN  echo "http://mirrors.aliyun.com/alpine/edge/main/" > /etc/apk/repositories 
         nodejs \
         nodejs-dev \
         zeromq-dev \
+        tzdata \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
 RUN npm install --unsafe-perm -g hexo 
