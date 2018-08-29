@@ -6,8 +6,6 @@ RUN  echo "http://mirrors.aliyun.com/alpine/edge/main/" > /etc/apk/repositories 
         npm \
         git \
         bash \
-        nodejs \
-        nodejs-dev \
         tzdata \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
