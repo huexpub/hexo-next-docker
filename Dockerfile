@@ -20,7 +20,7 @@ RUN cd /blog/node_modules \
 RUN cd /blog \
     &&git clone https://github.com/theme-next/hexo-theme-next themes/next
 RUN cd /blog/themes/next \
-    && git clone https://github.com/theme-next/theme-next-fancybox source/lib/fancybox
+    && git clone https://github.com/theme-next/theme-next-fancybox3 source/lib/fancybox
 RUN sed -i "s/imyouradmin/passwd/g" /blog/node_modules/hexo-editor/_config.yml  
 COPY run.sh /blog/run.sh
 WORKDIR /blog
