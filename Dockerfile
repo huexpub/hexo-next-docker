@@ -1,5 +1,6 @@
 FROM alpine:latest
 MAINTAINER Huex <huexpub@gmail.com>
+ENV PASSWD passwd
 RUN  echo "http://mirrors.aliyun.com/alpine/edge/main/" > /etc/apk/repositories \
     && echo "http://mirrors.aliyun.com/alpine/edge/community/" >> /etc/apk/repositories \
     && apk add --update \
@@ -21,8 +22,8 @@ RUN cd /blog \
     &&git clone https://github.com/theme-next/hexo-theme-next themes/next
 RUN cd /blog/themes/next \
     && git clone https://github.com/theme-next/theme-next-fancybox3 source/lib/fancybox
-RUN sed -i "s/imyouradmin/passwd/g" /blog/node_modules/hexo-editor/_config.yml  
 COPY run.sh /blog/run.sh
+RUN chmod +x /blog/run.sh
 WORKDIR /blog
 USER root
 EXPOSE 4000 2048
