@@ -1,13 +1,7 @@
 # hexo-next-docker
 
 ## Dockerfile
-下载文件到目录后，确保run.sh有执行权限，chmod a+x run.sh   chmod 777 run.sh 
 run.sh与dockfile同一目录后使用 docker build -t hexo:latest . 创建images
-创建images前，请修改dockerfile里以下内容
-```
-RUN sed -i "s/imyouradmin/passwd/g" /blog/node_modules/hexo-editor/_config.yml  
-```
-中passwd为hexo-editor访问的密码，默认用户名为admin
 
 ## RUN
 
@@ -19,6 +13,7 @@ docker run --network=host -d  \
     -v /opt/hexo/source:/blog/source \
     -v /opt/hexo/hexo.yml:/blog/_config.yml \
     -v /opt/hexo/next.yml:/blog/themes/next/_config.yml \
+    -e PASSWD="替换成你的编辑器密码"
     --name hexo \
     hexo:latest
 
@@ -26,14 +21,13 @@ docker run --network=host -d  \
 ## WEB
 使用 http://ip:2048访问hexo-editor  http://ip:4000访问在线页面
 
+
 ## PUBLIC
 默认hexo -g生成的文件在镜像内部/blog/public内，如果需要映射到本地 ，启动时添加以下内容
 ```
 -v /opt/hexo/public:/blog/public \
 
 ```
-
 ## HELP
-
 http://theme-next.iissnan.com/getting-started.html
 
